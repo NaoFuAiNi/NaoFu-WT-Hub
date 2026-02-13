@@ -36,6 +36,25 @@ if (Test-Path (Join-Path $debug "nf_subset_tool.exe")) {
     Write-Warning "nf_subset_tool.exe not found in debug root; skipping copy (font subsetting will be unavailable in this release)."
 }
 
+# 精简发布体积：仅保留必要语言资源 & 删除 pdb
+Write-Host "清理多余语言资源与调试符号 ..."
+$cultureKeep = @('en', 'en-US', 'zh-Hans')
+$cultureAll  = @('cs','de','es','fr','it','ja','ko','pl','pt-BR','ru','tr','zh-Hant','zh-Hans','en','en-US')
+Get-ChildItem $publishOut -Directory -ErrorAction SilentlyContinue |
+    Where-Object { $cultureAll -contains $_.Name -and ($cultureKeep -notcontains $_.Name) } |
+    ForEach-Object {
+        try {
+            Remove-Item $_.FullName -Recurse -Force -ErrorAction Stop
+        } catch { Write-Warning "删除语言目录失败: $($_.FullName) - $($_.Exception.Message)" }
+    }
+
+Get-ChildItem $release -Recurse -Filter *.pdb -ErrorAction SilentlyContinue |
+    ForEach-Object {
+        try {
+            Remove-Item $_.FullName -Force -ErrorAction Stop
+        } catch { Write-Warning "删除 pdb 失败: $($_.FullName) - $($_.Exception.Message)" }
+    }
+
 Write-Host "复制 ui、assets 到 release\bin ..."
 foreach ($sub in @("ui", "assets")) {
     $src = Join-Path $debug $sub
