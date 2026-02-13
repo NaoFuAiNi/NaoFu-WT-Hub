@@ -30,7 +30,11 @@ if ($binUiDir -and (Test-Path -LiteralPath $binUiDir)) {
 }
 Write-Host "复制 tools ..."
 Copy-Item (Join-Path $debug "NaoFu WT Customize Font 2.11.exe") (Join-Path $release "tools") -Force
-Copy-Item (Join-Path $debug "nf_subset_tool.exe") (Join-Path $release "tools") -Force
+if (Test-Path (Join-Path $debug "nf_subset_tool.exe")) {
+    Copy-Item (Join-Path $debug "nf_subset_tool.exe") (Join-Path $release "tools") -Force
+} else {
+    Write-Warning "nf_subset_tool.exe not found in debug root; skipping copy (font subsetting will be unavailable in this release)."
+}
 
 Write-Host "复制 ui、assets 到 release\bin ..."
 foreach ($sub in @("ui", "assets")) {
