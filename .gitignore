@@ -8,8 +8,16 @@ Launcher/bin/
 Launcher/obj/
 src/obj/
 build/
-tools/nf_subset_tool/dist/
 nf_config.json
+
+# PyInstaller 产物与缓存
+tools/nf_subset_tool/dist/
+tools/nf_subset_tool/build/
+tools/nf_subset_tool/build_tmp/
+tools/nf_subset_tool/*.spec
+
+# 备份文件
+*.bak
 
 # 根目录可执行文件（需本地编译）
 NaoFu WT Hub.exe

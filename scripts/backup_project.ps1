@@ -1,4 +1,4 @@
-# NaoFu WT Font 2.11 项目完整备份脚本
+﻿# NaoFu WT Font 2.1.2 项目完整备份脚本
 # 将整个项目（debug 的父目录）打包为 zip，保存到项目上级目录，文件名含日期
 # 在项目根执行: .\debug\scripts\backup_project.ps1 或在 debug 下: .\scripts\backup_project.ps1
 
@@ -6,7 +6,7 @@ $ErrorActionPreference = "Stop"
 $ProjectRoot = if ($PSScriptRoot) { Split-Path -Parent (Split-Path -Parent $PSScriptRoot) } else { Split-Path -Parent (Split-Path -Parent (Get-Location | Select-Object -ExpandProperty Path)) }
 $ParentDir = Split-Path -Parent $ProjectRoot
 $TimeStamp = Get-Date -Format "yyyyMMdd_HHmm"
-$ZipName = "NaoFu_WT_Font_2.11_备份_$TimeStamp.zip"
+$ZipName = "NaoFu_WT_Font_2.1.2_备份_$TimeStamp.zip"
 $ZipPath = Join-Path $ParentDir $ZipName
 
 Write-Host "正在备份项目到: $ZipPath" -ForegroundColor Cyan

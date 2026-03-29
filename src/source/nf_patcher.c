@@ -137,6 +137,14 @@ s32 NF_runFontReplace(u32 font_choice, const char* project_dir, int auto_slim) {
         }
         nf_printf("[NaoFu]  > 瘦身后大小: %ld 字节\n", replace_size);
         if (replace_size > search_size) {
+            if (auto_slim) {
+                /* 自动模式（完整覆盖/自定义批量）：此槽位原版太小，跳过不影响其他槽位 */
+                nf_printf("\n[NaoFu] 提示：此槽位原版字体较小（%ld 字节），瘦身后仍超出，已自动跳过。\n", search_size);
+                free(vromfs_data);
+                free(search_data);
+                free(replace_data_padded);
+                return 0;
+            }
             nf_printf("\n[NaoFu] 瘦身后仍大于原版，无法替换。请换用更小的字体或联系作者。\n");
             free(vromfs_data);
             free(search_data);

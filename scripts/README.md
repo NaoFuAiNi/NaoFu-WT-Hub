@@ -1,4 +1,4 @@
-# 构建与维护脚本说明
+﻿# 构建与维护脚本说明
 
 debug 用到的脚本都放这儿，`.ps1`、`.bat`、`.cmd` 之类。
 
@@ -22,7 +22,7 @@ debug 用到的脚本都放这儿，`.ps1`、`.bat`、`.cmd` 之类。
 .\scripts\build_debug.ps1
 ```
 
-会依次：1）编译 C 主程序到 `debug\NaoFu WT Customize Font 2.11.exe`；2）编译 Launcher (Debug)，并将 C 程序与 font 等复制到 `Launcher\bin\Debug\net8.0-windows\`。完成后直接运行该目录下的 **NaoFu WT Hub 2.11** 即可。
+会依次：1）编译 C 主程序到 `debug\NaoFu WT Customize Font 2.1.2.exe`；2）编译 Launcher (Debug)，并将 C 程序与 font 等复制到 `Launcher\bin\Debug\net8.0-windows\`。完成后直接运行该目录下的 **NaoFu WT Hub 2.1.2** 即可。
 
 ## 脚本一览
 

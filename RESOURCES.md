@@ -63,9 +63,12 @@
 
 - **Path**: `debug/tools/nf_subset_tool/`
 
-- `subset_tool.py`：字体子集化与西里尔映射的 Python 脚本。  
+- `subset_tool.py`：字体子集化与西里尔映射的 Python 脚本，采用**两轮瘦身策略**：  
+  - **第一轮**：按参考字体字符集裁剪 + 深度压缩（去 hinting / layout features）+ 可变字体（VF）压平；  
+  - **第二轮**（仅在第一轮结果仍超出参考字体大小时触发）：改用最小拉丁集（Basic Latin + Latin-1 Supplement，约 190 字）从原始字体裁剪，确保极小槽位（如 53 KB 的 OTF 槽位）也能完成替换；  
+  - 最终写入两轮中体积更小的那个。  
 - `build_exe.bat`：使用 PyInstaller 打包为 `nf_subset_tool.exe`，供 C 程序调用。  
-- 发布时需将 `nf_subset_tool.exe` 放在与 `NaoFu WT Customize Font 2.11.exe` 同目录（或发布包的 `tools` 下）。
+- 发布时需将 `nf_subset_tool.exe` 放在与 `NaoFu WT Customize Font 2.1.2.exe` 同目录（或发布包的 `tools` 下）。
 
 ---
 

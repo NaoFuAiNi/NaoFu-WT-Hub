@@ -1,4 +1,4 @@
-# NaoFu WT Font 2.11 - 发布版构建脚本
+﻿# NaoFu WT Font 2.1.2 - 发布版构建脚本
 # 脚本在 debug\scripts 下，项目根 = 上两级。在项目根执行: .\debug\scripts\build_release.ps1 或在 debug 下: .\scripts\build_release.ps1
 $ErrorActionPreference = "Stop"
 $root = if ($PSScriptRoot) { Split-Path -Parent (Split-Path -Parent $PSScriptRoot) } else { Split-Path -Parent (Split-Path -Parent (Get-Location | Select-Object -ExpandProperty Path)) }
@@ -29,7 +29,7 @@ if ($binUiDir -and (Test-Path -LiteralPath $binUiDir)) {
     Get-ChildItem -Path $binUiDir -Filter "*.md" -File -ErrorAction SilentlyContinue | Remove-Item -Force
 }
 Write-Host "复制 tools ..."
-Copy-Item (Join-Path $debug "NaoFu WT Customize Font 2.11.exe") (Join-Path $release "tools") -Force
+Copy-Item (Join-Path $debug "NaoFu WT Customize Font 2.1.2.exe") (Join-Path $release "tools") -Force
 if (Test-Path (Join-Path $debug "nf_subset_tool.exe")) {
     Copy-Item (Join-Path $debug "nf_subset_tool.exe") (Join-Path $release "tools") -Force
 } else {

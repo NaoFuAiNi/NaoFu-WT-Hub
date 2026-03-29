@@ -1,4 +1,4 @@
-# ui/
+﻿# ui/
 
 HTML + CSS + JS，Launcher 用 WebView2 载。
 
@@ -10,7 +10,7 @@ HTML + CSS + JS，Launcher 用 WebView2 载。
 
 ## 开发说明
 
-- 调试：从 `Launcher/bin/Debug/net8.0-windows/` 跑 NaoFu WT Hub 2.11，会载本目录页面。  
+- 调试：从 `Launcher/bin/Debug/net8.0-windows/` 跑 NaoFu WT Hub 2.1.2，会载本目录页面。  
 - 改完 HTML/CSS/JS 刷新就行，不用重编 C。  
 - 打 Release 包时 `build_release.ps1` 会把 ui 拷进发布包。
 

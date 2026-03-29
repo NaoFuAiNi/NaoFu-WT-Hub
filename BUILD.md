@@ -1,4 +1,4 @@
-# 从零编译与发布说明（开发者 / 贡献者）
+﻿# 从零编译与发布说明（开发者 / 贡献者）
 
 克隆仓库后想自己编 Debug 或打 Release 包的话，照着下面做就行。
 
@@ -31,14 +31,14 @@
 
 脚本会依次：
 
-1. 编译 C 主程序到 `debug\NaoFu WT Customize Font 2.11.exe`
+1. 编译 C 主程序到 `debug\NaoFu WT Customize Font 2.1.2.exe`
 2. 编译 Launcher（Debug），并将 C 程序与 `font` 等资源复制到  
    `debug\Launcher\bin\Debug\net8.0-windows\`
 
 完成后运行：
 
 ```
-debug\Launcher\bin\Debug\net8.0-windows\NaoFu WT Hub 2.11.exe
+debug\Launcher\bin\Debug\net8.0-windows\NaoFu WT Hub 2.1.2.exe
 ```
 
 即可打开完整工具界面（包括「自定义字体」等功能）。
@@ -67,7 +67,7 @@ debug\Launcher\bin\Debug\net8.0-windows\NaoFu WT Hub 2.11.exe
 
 1. 清空并创建项目根下的 **release** 目录
 2. 发布 Launcher（Release、win-x64、自包含）到 `release/bin`
-3. 从 `debug` 复制 **NaoFu WT Customize Font 2.11.exe**、**nf_subset_tool.exe** 到 `release/tools`
+3. 从 `debug` 复制 **NaoFu WT Customize Font 2.1.2.exe**、**nf_subset_tool.exe** 到 `release/tools`
 4. 复制 `ui`、`assets`、`font` 等（排除内部 .md）到对应位置
 5. 复制根目录启动器 **NaoFu WT Hub.exe** 到 `release` 根目录
 6. 将 `debug/README.md` 复制为 `release/README.md`（给最终用户看的说明）
@@ -83,7 +83,7 @@ debug\Launcher\bin\Debug\net8.0-windows\NaoFu WT Hub 2.11.exe
 
 | 文件 | 如何生成 |
 |------|----------|
-| **NaoFu WT Customize Font 2.11.exe** | 在 `debug` 下执行 `scripts\build_c.bat`（推荐）或 `scripts\do_build.cmd`，也可在「x64 本机工具命令提示」里用 `scripts\build.bat` |
+| **NaoFu WT Customize Font 2.1.2.exe** | 在 `debug` 下执行 `scripts\build_c.bat`（推荐）或 `scripts\do_build.cmd`，也可在「x64 本机工具命令提示」里用 `scripts\build.bat` |
 | **NaoFu WT Hub.exe** | 在 `debug` 下执行 `scripts\build_launcher_stub.bat` |
 | **Launcher（Release）** | 不必手动单独发布，`build_release.ps1` 内会调用 `dotnet publish`；若仅想预先编译，可在项目根或 debug 下执行 `dotnet build debug\Launcher\NaoFu.WT.Font.Launcher.csproj -c Release` |
 | **nf_subset_tool.exe** | 进入 `debug/tools/nf_subset_tool`，执行 `build_exe.bat`，再将 `dist/nf_subset_tool.exe` 复制到 `debug` 根目录 |
@@ -116,7 +116,7 @@ debug\Launcher\bin\Debug\net8.0-windows\NaoFu WT Hub 2.11.exe
 
 - **提示「未找到 C 程序所在目录」**  
   说明 Launcher 输出目录下没有 C 主程序 exe。  
-  请先执行 `build_debug.ps1` 或至少执行一次 `scripts\build_c.bat` 生成 `NaoFu WT Customize Font 2.11.exe`，  
+  请先执行 `build_debug.ps1` 或至少执行一次 `scripts\build_c.bat` 生成 `NaoFu WT Customize Font 2.1.2.exe`，  
   然后重新编译 Launcher，或将该 exe 复制到 `Launcher\bin\Debug\net8.0-windows\`（或对应 Release 输出目录）。
 
 - **nf_subset_tool.exe 相关**  

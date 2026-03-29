@@ -1,11 +1,11 @@
-/* 根目录启动器：启动 bin\NaoFu WT Hub 2.11.exe，工作目录为根目录 */
+﻿/* 根目录启动器：启动 bin\NaoFu WT Hub 2.1.2.exe，工作目录为根目录 */
 
 #define WIN32_LEAN_AND_MEAN
 #define _CRT_SECURE_NO_WARNINGS
 #include <windows.h>
 #include <stdio.h>
 
-#define BIN_EXE L"bin\\NaoFu WT Hub 2.11.exe"
+#define BIN_EXE L"bin\\NaoFu WT Hub 2.1.2.exe"
 #define MAX_PATH_W 1024
 
 int WINAPI wWinMain(HINSTANCE hInst, HINSTANCE hPrev, LPWSTR lpCmdLine, int nShow)
