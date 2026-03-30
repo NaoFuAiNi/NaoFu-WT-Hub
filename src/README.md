@@ -1,6 +1,6 @@
 ﻿# src/
 
-这里是 **C 核心程序** 源码目录，对应生成的 `NaoFu WT Customize Font 2.1.2.exe`。
+这里是 **C 核心程序** 源码目录，对应生成的 `NaoFu WT Customize Font 2.1.3.exe`。
 
 - `source/`：`main.c`、`nf_*.c` 等。  
 - `include/`：头文件。  

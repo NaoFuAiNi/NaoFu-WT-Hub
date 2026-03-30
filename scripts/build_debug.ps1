@@ -1,4 +1,4 @@
-﻿# NaoFu WT Font 2.1.2 - Debug build (C then Launcher)
+﻿# NaoFu WT Font 2.1.3 - Debug build (C then Launcher)
 # Run from repo root: .\debug\scripts\build_debug.ps1  or from debug: .\scripts\build_debug.ps1
 $ErrorActionPreference = "Stop"
 $scriptDir = if ($PSScriptRoot) { $PSScriptRoot } else { Split-Path -Parent $MyInvocation.MyCommand.Path }
@@ -11,7 +11,7 @@ if (-not (Test-Path (Join-Path $debug "Launcher\NaoFu.WT.Font.Launcher.csproj"))
     Write-Error "Launcher project not found. Run from repo root or debug dir."
 }
 
-Write-Host "=== 1/3 Building C (NaoFu WT Customize Font 2.1.2.exe) ===" -ForegroundColor Cyan
+Write-Host "=== 1/3 Building C (NaoFu WT Customize Font 2.1.3.exe) ===" -ForegroundColor Cyan
 Push-Location $debug
 try {
     & cmd /c "scripts\build_c.bat"
@@ -56,4 +56,4 @@ $outDir = Join-Path $debug "Launcher\bin\Debug\net8.0-windows"
 if ((Test-Path $subsetExe) -and (Test-Path $outDir)) {
     Copy-Item $subsetExe (Join-Path $outDir "nf_subset_tool.exe") -Force
 }
-Write-Host "Done. Run: debug\Launcher\bin\Debug\net8.0-windows\NaoFu WT Hub 2.1.2.exe" -ForegroundColor Green
+Write-Host "Done. Run: debug\Launcher\bin\Debug\net8.0-windows\NaoFu WT Hub 2.1.3.exe" -ForegroundColor Green

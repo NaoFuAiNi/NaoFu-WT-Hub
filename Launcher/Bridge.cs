@@ -14,7 +14,7 @@ public class Bridge
 {
     private readonly WebView2 _webView;
     private readonly Action<bool>? _onTitleBarTheme;
-    private const string ToolVersion = "2.1.2";
+    private const string ToolVersion = "2.1.3";
     private static readonly string ExeName = "NaoFu WT Customize Font " + ToolVersion + ".exe";
     /// <summary>项目名最大长度（与 C 端一致）</summary>
     private const int ProjectNameMax = 64;

@@ -1,4 +1,4 @@
-# Resource Overview
+﻿# Resource Overview
 
 项目里各资源目录是干啥的，简单记一笔。
 
@@ -68,7 +68,7 @@
   - **第二轮**（仅在第一轮结果仍超出参考字体大小时触发）：改用最小拉丁集（Basic Latin + Latin-1 Supplement，约 190 字）从原始字体裁剪，确保极小槽位（如 53 KB 的 OTF 槽位）也能完成替换；  
   - 最终写入两轮中体积更小的那个。  
 - `build_exe.bat`：使用 PyInstaller 打包为 `nf_subset_tool.exe`，供 C 程序调用。  
-- 发布时需将 `nf_subset_tool.exe` 放在与 `NaoFu WT Customize Font 2.1.2.exe` 同目录（或发布包的 `tools` 下）。
+- 发布时需将 `nf_subset_tool.exe` 放在与 `NaoFu WT Customize Font 2.1.3.exe` 同目录（或发布包的 `tools` 下）。
 
 ---
 

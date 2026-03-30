@@ -8,7 +8,7 @@
 
 void NF_displayMenuHeader(void) {
     nf_printf("=======================================================================\n");
-    nf_printf("=            NaoFu's War Thunder Custom Font Patcher v2.1.2            =\n");
+    nf_printf("=            NaoFu's War Thunder Custom Font Patcher v2.1.3            =\n");
     nf_printf("=                      战争雷霆自定义字体替换工具                     =\n");
     nf_printf("=======================================================================\n");
     nf_printf(" [NaoFu] 作者: NaoFu (一只小脑斧) | B站UID: 405046590 | Q群: 941587776\n");

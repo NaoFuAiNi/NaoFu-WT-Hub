@@ -1,4 +1,4 @@
-# tools/nf_subset_tool
+﻿# tools/nf_subset_tool
 
 字体**子集化 + 西里尔→拉丁映射**的独立小工具，供 C 主程序调用。
 
@@ -41,5 +41,5 @@ pyinstaller --onefile --noconsole --name nf_subset_tool subset_tool.py
 生成的 `dist/nf_subset_tool.exe` 拷到：
 
 - 开发：`debug/` 根目录，这样跑 `build_debug.ps1` 或编 Launcher 时会自动带过去；  
-- 发布：和 `NaoFu WT Customize Font 2.1.2.exe` 放一起，或丢发布包的 `tools/` 里。
+- 发布：和 `NaoFu WT Customize Font 2.1.3.exe` 放一起，或丢发布包的 `tools/` 里。
 
